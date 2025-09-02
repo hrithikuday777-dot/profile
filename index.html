@@ -415,6 +415,264 @@
             transform: scale(1.1);
         }
 
+        /* Resume Timeline Styles */
+        .resume-section {
+            margin-bottom: 40px;
+        }
+
+        .resume-section-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.6rem;
+            color: #fff;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .resume-section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            border-radius: 2px;
+        }
+
+        .resume-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .timeline {
+            position: relative;
+            margin-left: 20px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #ff6b6b, #4ecdc4);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 35px;
+            opacity: 0;
+            transform: translateX(-30px);
+            animation: slideInLeft 0.6s ease forwards;
+        }
+
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes slideInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -20px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            border-radius: 50%;
+            border: 3px solid #2d2d2d;
+            z-index: 2;
+        }
+
+        .timeline-content {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-right: 10px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .timeline-content:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .timeline-title {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .timeline-period {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .timeline-description {
+            color: #b0b0b0;
+            line-height: 1.7;
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        .resume-download {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Contact Form Styles */
+        .contact-form {
+            max-width: 800px;
+            margin: 30px auto 0;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: #fff;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: #ff6b6b;
+            box-shadow: 0 0 0 2px rgba(255, 107, 107, 0.2);
+        }
+
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: #888;
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .form-message {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .form-message.success {
+            background: rgba(76, 175, 80, 0.1);
+            border: 1px solid #4caf50;
+            color: #4caf50;
+        }
+
+        .form-message.error {
+            background: rgba(244, 67, 54, 0.1);
+            border: 1px solid #f44336;
+            color: #f44336;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .container {
@@ -453,6 +711,10 @@
                 right: 20px;
                 font-size: 30px;
             }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* Smooth scrolling and animations */
@@ -489,21 +751,9 @@
                 <div class="profile-image">
                     <img src="https://files.catbox.moe/oc5u7b.jpg" alt="𝚮ʀɪᴛʜɪᴋ 𝐔ᴅᴀʏ ¹⁰" 
                          onload="this.style.opacity='1'" 
-                         onerror="this.style.display='none'; this.parentElement.innerHTML='AS';" 
+                         onerror="this.style.display='none'; this.parentElement.innerHTML='HU';" 
                          style="opacity: 0; transition: opacity 0.3s ease;" />
                 </div>
-
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/hrithik-xeon-119923381" target="_blank" class="https://www.linkedin.com/in/hrithik-xeon-119923381" title="LinkedIn">
-                    <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="LinkedIn" height="24" width="24" />
-                </a>
-                <a href="https://instagram.com/xeonkl10" target="_blank" class="https://instagram.com/xeonkl10" title="Instagram">
-                    <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="Instagram" height="24" width="24" />
-                </a>
-                <a href="https://github.com/xeonkl10" target="_blank" class="https://github.com/xeonkl10k" title="GitHub">
-                    <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/github.svg" alt="GitHub" height="24" width="24" />
-                </a>
-            </div>
                 <div class="profile-info">
                     <h1>𝚮ʀɪᴛʜɪᴋ 𝐔ᴅᴀʏ - 乂𝛆𝛐𝛈 𝛋𝛊 ¹⁰</h1>
                     <div class="role">Web Developer</div>
@@ -539,6 +789,18 @@
                         <div class="value">Malappuram, Kerala, India</div>
                     </div>
                 </div>
+            </div>
+
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/hrithik-xeon-119923381" target="_blank" class="social-link" title="LinkedIn">
+                    <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="LinkedIn" height="24" width="24" />
+                </a>
+                <a href="https://instagram.com/xeonkl10" target="_blank" class="social-link" title="Instagram">
+                    <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="Instagram" height="24" width="24" />
+                </a>
+                <a href="https://github.com/xeonkl10" target="_blank" class="social-link" title="GitHub">
+                    <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/github.svg" alt="GitHub" height="24" width="24" />
+                </a>
             </div>
         </div>
 
@@ -607,11 +869,109 @@
         <div id="resume" class="content-section">
             <div class="about-section fade-in">
                 <h2 class="section-title">Resume</h2>
-                <p class="about-text">Here's my professional resume showcasing my education, skills, and experience.</p>
-                <div class="resume-container">
-                    <img src="https://files.catbox.moe/gt7t0x.jpg" alt="Hrithik Uday Resume" class="resume-image" onclick="openModal()" />
-                    <br>
-                    <a href="https://files.catbox.moe/gt7t0x.jpg" download="Hrithik_Uday_Resume.jpg" class="download-btn">📥 Download Resume</a>
+                
+                <!-- Education Section -->
+                <div class="resume-section">
+                    <h3 class="resume-section-title">
+                        <span class="resume-icon">🎓</span>
+                        Education
+                    </h3>
+                    
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4 class="timeline-title">B.Com (Co-operation)</h4>
+                                <span class="timeline-period">2021 — Present</span>
+                                <p class="timeline-description">
+                                    Currently pursuing Bachelor of Commerce in Co-operation at KMCT Arts and Science College, Kuttippuram, developing strong foundation in commerce and cooperative principles.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4 class="timeline-title">Higher Secondary Education</h4>
+                                <span class="timeline-period">2019 — 2021</span>
+                                <p class="timeline-description">
+                                    Completed higher secondary education at Fathima Matha HSS, building academic excellence and preparing for higher education in commerce stream.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4 class="timeline-title">Secondary Education</h4>
+                                <span class="timeline-period">2017 — 2019</span>
+                                <p class="timeline-description">
+                                    Completed secondary education at GBHSS Tirur, establishing strong academic foundation and developing interest in technology and web development.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Experience Section -->
+                <div class="resume-section">
+                    <h3 class="resume-section-title">
+                        <span class="resume-icon">💼</span>
+                        Experience
+                    </h3>
+                    
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4 class="timeline-title">Python Full Stack Development</h4>
+                                <span class="timeline-period">2023 — Present</span>
+                                <p class="timeline-description">
+                                    Currently learning Python Full Stack Development, focusing on creating scalable web applications and intelligent bots that enhance user experiences through automation and seamless functionality.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4 class="timeline-title">Web Development Projects</h4>
+                                <span class="timeline-period">2022 — Present</span>
+                                <p class="timeline-description">
+                                    Developing modern web applications using HTML, CSS, and JavaScript. Creating responsive, user-friendly interfaces with focus on clean code and professional design standards.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4 class="timeline-title">AI & Technology Exploration</h4>
+                                <span class="timeline-period">2023 — Present</span>
+                                <p class="timeline-description">
+                                    Exploring artificial intelligence technologies and their applications in web development, focusing on creating intelligent solutions for modern digital challenges.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4 class="timeline-title">Modeling & Photography</h4>
+                                <span class="timeline-period">2022 — Present</span>
+                                <p class="timeline-description">
+                                    Professional modeling work showcasing fashion, beauty, and elegance through creative photography and visual storytelling, developing skills in presentation and visual communication.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Download Resume Button -->
+                <div class="resume-download">
+                    <a href="https://files.catbox.moe/gt7t0x.jpg" download="Hrithik_Uday_Resume.jpg" class="download-btn">
+                        📥 Download Resume PDF
+                    </a>
                 </div>
             </div>
         </div>
@@ -620,7 +980,30 @@
         <div id="contact" class="content-section">
             <div class="about-section fade-in">
                 <h2 class="section-title">Contact</h2>
-                <p class="about-text">Contact form will be displayed here.</p>
+                <p class="about-text">Feel free to reach out to me for any inquiries or collaborations.</p>
+                
+                <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" onsubmit="handleFormSubmit(event)">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Full Name" required class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Email Address" required class="form-input">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="subject" placeholder="Subject" required class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Your Message" required class="form-textarea" rows="6"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <span class="btn-text">Send Message</span>
+                        <span class="btn-loading" style="display: none;">Sending...</span>
+                    </button>
+                </form>
+                
+                <div class="form-message" id="formMessage" style="display: none;"></div>
             </div>
         </div>
     </div>
@@ -634,6 +1017,75 @@
     </div>
 
     <script>
+        // Contact form handling
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const form = event.target;
+            const submitBtn = form.querySelector('.submit-btn');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const btnLoading = submitBtn.querySelector('.btn-loading');
+            const messageDiv = document.getElementById('formMessage');
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'inline';
+            
+            // Get form data
+            const formData = new FormData(form);
+            
+            // Real form submission to Formspree or other service
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                // Reset button state
+                submitBtn.disabled = false;
+                btnText.style.display = 'inline';
+                btnLoading.style.display = 'none';
+                
+                if (response.ok) {
+                    // Show success message
+                    messageDiv.className = 'form-message success';
+                    messageDiv.innerHTML = '✅ Message sent successfully! I\'ll get back to you soon.';
+                    messageDiv.style.display = 'block';
+                    
+                    // Reset form
+                    form.reset();
+                } else {
+                    // Show error message
+                    messageDiv.className = 'form-message error';
+                    messageDiv.innerHTML = '❌ Oops! There was a problem sending your message. Please try again.';
+                    messageDiv.style.display = 'block';
+                }
+                
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    messageDiv.style.display = 'none';
+                }, 5000);
+                
+            }).catch(error => {
+                // Reset button state
+                submitBtn.disabled = false;
+                btnText.style.display = 'inline';
+                btnLoading.style.display = 'none';
+                
+                // Show error message
+                messageDiv.className = 'form-message error';
+                messageDiv.innerHTML = '❌ Network error. Please check your connection and try again.';
+                messageDiv.style.display = 'block';
+                
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    messageDiv.style.display = 'none';
+                }, 5000);
+            });
+        }
+
         function showSection(sectionId) {
             // Hide all sections
             const sections = document.querySelectorAll('.content-section');

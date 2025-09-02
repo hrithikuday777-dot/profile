@@ -207,6 +207,91 @@
             margin-bottom: 20px;
         }
 
+        /* Resume Image Styles */
+        .resume-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .resume-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .resume-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .download-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .modal-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .close-modal:hover {
+            color: #ff6b6b;
+            transform: scale(1.1);
+        }
+
         /* Navigation */
         .nav-tabs {
             display: flex;
@@ -357,6 +442,17 @@
             .profile-info h1 {
                 font-size: 1.8rem;
             }
+
+            .modal-content {
+                max-width: 95%;
+                max-height: 95%;
+            }
+
+            .close-modal {
+                top: 10px;
+                right: 20px;
+                font-size: 30px;
+            }
         }
 
         /* Smooth scrolling and animations */
@@ -444,16 +540,12 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
 
         <!-- Navigation -->
         <div class="nav-tabs">
             <button class="nav-tab active" onclick="showSection('about')">About</button>
             <button class="nav-tab" onclick="showSection('resume')">Resume</button>
-            <button class="nav-tab" onclick="showSection('portfolio')">Portfolio</button>
-            <button class="nav-tab" onclick="showSection('api')">API</button>
             <button class="nav-tab" onclick="showSection('contact')">Contact</button>
         </div>
 
@@ -465,7 +557,7 @@
                     I am Hrithik Uday, a B.Com (Co-operation) student at KMCT Arts and Science College, Kuttippuram, with a strong academic foundation in commerce from Fathima Matha HSS and GBHSS Tirur.
                 </p>
                 <p class="about-text">
-                    Alongside my commerce background, I’m currently expanding my technical skills by studying Python Full Stack Development and exploring AI technologies.
+                    Alongside my commerce background, I'm currently expanding my technical skills by studying Python Full Stack Development and exploring AI technologies.
                 </p>
             </div>
 
@@ -511,33 +603,33 @@
             </div>
         </div>
 
-        <!-- Other Sections (Placeholders) -->
+        <!-- Resume Section -->
         <div id="resume" class="content-section">
             <div class="about-section fade-in">
                 <h2 class="section-title">Resume</h2>
-                <p class="about-text">Resume content will be displayed here.</p>
+                <p class="about-text">Here's my professional resume showcasing my education, skills, and experience.</p>
+                <div class="resume-container">
+                    <img src="https://files.catbox.moe/gt7t0x.jpg" alt="Hrithik Uday Resume" class="resume-image" onclick="openModal()" />
+                    <br>
+                    <a href="https://files.catbox.moe/gt7t0x.jpg" download="Hrithik_Uday_Resume.jpg" class="download-btn">📥 Download Resume</a>
+                </div>
             </div>
         </div>
 
-        <div id="portfolio" class="content-section">
-            <div class="about-section fade-in">
-                <h2 class="section-title">Portfolio</h2>
-                <p class="about-text">Portfolio projects will be displayed here.</p>
-            </div>
-        </div>
-
-        <div id="api" class="content-section">
-            <div class="about-section fade-in">
-                <h2 class="section-title">API</h2>
-                <p class="about-text">API documentation will be displayed here.</p>
-            </div>
-        </div>
-
+        <!-- Contact Section -->
         <div id="contact" class="content-section">
             <div class="about-section fade-in">
                 <h2 class="section-title">Contact</h2>
                 <p class="about-text">Contact form will be displayed here.</p>
             </div>
+        </div>
+    </div>
+
+    <!-- Modal for Full-Screen Resume View -->
+    <div id="resumeModal" class="modal" onclick="closeModal()">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <img src="https://files.catbox.moe/gt7t0x.jpg" alt="Hrithik Uday Resume" class="modal-image" />
         </div>
     </div>
 
@@ -561,6 +653,23 @@
             // Add active class to clicked tab
             event.target.classList.add('active');
         }
+
+        function openModal() {
+            document.getElementById('resumeModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('resumeModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
 
         // Add smooth scroll behavior and entrance animations
         document.addEventListener('DOMContentLoaded', function() {

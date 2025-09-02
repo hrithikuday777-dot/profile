@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>𝚮ʀɪᴛʜɪᴋ 𝐔ᴅᴀʏ - 乂𝛆𝛐𝛈 𝛋𝛊 ¹⁰</title>
+    <title>ðš®Ê€Éªá´›ÊœÉªá´‹ ð”á´…á´€Ê - ä¹‚ð›†ð›ð›ˆ ð›‹ð›Š Â¹â°</title>
     <style>
         * {
             margin: 0;
@@ -141,7 +141,6 @@
             display: flex;
             gap: 15px;
             justify-content: center;
-            flex-wrap: wrap;
         }
 
         .social-link {
@@ -206,6 +205,91 @@
             line-height: 1.8;
             font-size: 1.1rem;
             margin-bottom: 20px;
+        }
+
+        /* Resume Image Styles */
+        .resume-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .resume-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .resume-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .download-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .modal-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .close-modal:hover {
+            color: #ff6b6b;
+            transform: scale(1.1);
         }
 
         /* Navigation */
@@ -326,7 +410,6 @@
         .html-icon { background: #e34c26; }
         .css-icon { background: #1572b6; }
         .js-icon { background: #f7df1e; color: #000; }
-        .python-icon { background: #3776ab; }
 
         .language-icon:hover {
             transform: scale(1.1);
@@ -618,16 +701,23 @@
                 font-size: 1.8rem;
             }
 
+            .modal-content {
+                max-width: 95%;
+                max-height: 95%;
+            }
+
+            .close-modal {
+                top: 10px;
+                right: 20px;
+                font-size: 30px;
+            }
+
             .form-grid {
                 grid-template-columns: 1fr;
             }
-
-            .social-links {
-                justify-content: center;
-            }
         }
 
-        /* Animations */
+        /* Smooth scrolling and animations */
         .fade-in {
             animation: fadeIn 0.8s ease-in-out;
         }
@@ -659,41 +749,41 @@
         <div class="profile-card fade-in">
             <div class="profile-header">
                 <div class="profile-image">
-                    <img src="https://files.catbox.moe/oc5u7b.jpg" alt="𝚮ʀɪᴛʜɪᴋ 𝐔ᴅᴀʏ ¹⁰" 
+                    <img src="https://files.catbox.moe/oc5u7b.jpg" alt="ðš®Ê€Éªá´›ÊœÉªá´‹ ð”á´…á´€Ê Â¹â°" 
                          onload="this.style.opacity='1'" 
                          onerror="this.style.display='none'; this.parentElement.innerHTML='HU';" 
                          style="opacity: 0; transition: opacity 0.3s ease;" />
                 </div>
                 <div class="profile-info">
-                    <h1>𝚮ʀɪᴛʜɪᴋ 𝐔ᴅᴀʏ - 乂𝛆𝛐𝛈 𝛋𝛊 ¹⁰</h1>
+                    <h1>ðš®Ê€Éªá´›ÊœÉªá´‹ ð”á´…á´€Ê - ä¹‚ð›†ð›ð›ˆ ð›‹ð›Š Â¹â°</h1>
                     <div class="role">Web Developer</div>
                 </div>
             </div>
 
             <div class="contact-grid">
                 <div class="contact-item">
-                    <div class="contact-icon">✉</div>
+                    <div class="contact-icon">âœ‰</div>
                     <div class="contact-info">
                         <div class="label">Email</div>
                         <div class="value">hrithikuday777@gmail.com</div>
                     </div>
                 </div>
                 <div class="contact-item">
-                    <div class="contact-icon">📱</div>
+                    <div class="contact-icon">ðŸ“±</div>
                     <div class="contact-info">
                         <div class="label">Phone</div>
                         <div class="value">+91 80755 57290</div>
                     </div>
                 </div>
                 <div class="contact-item">
-                    <div class="contact-icon">🎂</div>
+                    <div class="contact-icon">ðŸŽ‚</div>
                     <div class="contact-info">
                         <div class="label">Birthday</div>
                         <div class="value">Jan 23, 2004</div>
                     </div>
                 </div>
                 <div class="contact-item">
-                    <div class="contact-icon">📍</div>
+                    <div class="contact-icon">ðŸ“</div>
                     <div class="contact-info">
                         <div class="label">Location</div>
                         <div class="value">Malappuram, Kerala, India</div>
@@ -702,7 +792,7 @@
             </div>
 
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/hrithik-xeon-119923381" target="_blank" class="social-link" title="LinkedIn">
+               <a href="https://www.linkedin.com/in/hrithik-xeon-119923381" target="_blank" class="social-link" title="LinkedIn">
                     <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="LinkedIn" height="24" width="24" />
                 </a>
                 <a href="https://instagram.com/xeonkl10" target="_blank" class="social-link" title="Instagram">
@@ -743,22 +833,22 @@
                 <h2 class="section-title">What I'm Doing</h2>
                 <div class="services-grid">
                     <div class="service-card">
-                        <div class="service-icon">🤖</div>
+                        <div class="service-icon">ðŸ¤–</div>
                         <h3>Web App Development</h3>
                         <p>Creating intelligent, efficient, automated bots.</p>
                     </div>
                     <div class="service-card">
-                        <div class="service-icon">💻</div>
+                        <div class="service-icon">ðŸ’»</div>
                         <h3>Web Development</h3>
                         <p>High-quality development of sites at the professional level.</p>
                     </div>
                     <div class="service-card">
-                        <div class="service-icon">📱</div>
+                        <div class="service-icon">ðŸ“±</div>
                         <h3>Mobile Apps</h3>
                         <p>Modification of applications for Windows and Android.</p>
                     </div>
                     <div class="service-card">
-                        <div class="service-icon">📸</div>
+                        <div class="service-icon">ðŸ“¸</div>
                         <h3>Modeling</h3>
                         <p>Showcasing fashion, beauty, and elegance through professional modeling and photography.</p>
                     </div>
@@ -766,7 +856,7 @@
             </div>
 
             <div class="languages-section fade-in">
-                <h2 class="section-title">Programming Languages</h2>
+                <h2 class="section-title">Languages</h2>
                 <div class="languages-grid">
                     <div class="language-item">
                         <div class="language-icon html-icon">HTML</div>
@@ -776,9 +866,6 @@
                     </div>
                     <div class="language-item">
                         <div class="language-icon js-icon">JS</div>
-                    </div>
-                    <div class="language-item">
-                        <div class="language-icon python-icon">PY</div>
                     </div>
                 </div>
             </div>
@@ -792,7 +879,7 @@
                 <!-- Education Section -->
                 <div class="resume-section">
                     <h3 class="resume-section-title">
-                        <span class="resume-icon">🎓</span>
+                        <span class="resume-icon">ðŸŽ“</span>
                         Education
                     </h3>
                     
@@ -801,7 +888,7 @@
                             <div class="timeline-dot"></div>
                             <div class="timeline-content">
                                 <h4 class="timeline-title">B.Com (Co-operation)</h4>
-                                <span class="timeline-period">2021 — Present</span>
+                                <span class="timeline-period">2021 â€” Present</span>
                                 <p class="timeline-description">
                                     Currently pursuing Bachelor of Commerce in Co-operation at KMCT Arts and Science College, Kuttippuram, developing strong foundation in commerce and cooperative principles.
                                 </p>
@@ -812,7 +899,7 @@
                             <div class="timeline-dot"></div>
                             <div class="timeline-content">
                                 <h4 class="timeline-title">Higher Secondary Education</h4>
-                                <span class="timeline-period">2019 — 2021</span>
+                                <span class="timeline-period">2019 â€” 2021</span>
                                 <p class="timeline-description">
                                     Completed higher secondary education at Fathima Matha HSS, building academic excellence and preparing for higher education in commerce stream.
                                 </p>
@@ -823,7 +910,7 @@
                             <div class="timeline-dot"></div>
                             <div class="timeline-content">
                                 <h4 class="timeline-title">Secondary Education</h4>
-                                <span class="timeline-period">2017 — 2019</span>
+                                <span class="timeline-period">2017 â€” 2019</span>
                                 <p class="timeline-description">
                                     Completed secondary education at GBHSS Tirur, establishing strong academic foundation and developing interest in technology and web development.
                                 </p>
@@ -835,7 +922,7 @@
                 <!-- Experience Section -->
                 <div class="resume-section">
                     <h3 class="resume-section-title">
-                        <span class="resume-icon">💼</span>
+                        <span class="resume-icon">ðŸ’¼</span>
                         Experience
                     </h3>
                     
@@ -844,7 +931,7 @@
                             <div class="timeline-dot"></div>
                             <div class="timeline-content">
                                 <h4 class="timeline-title">Python Full Stack Development</h4>
-                                <span class="timeline-period">2023 — Present</span>
+                                <span class="timeline-period">2023 â€” Present</span>
                                 <p class="timeline-description">
                                     Currently learning Python Full Stack Development, focusing on creating scalable web applications and intelligent bots that enhance user experiences through automation and seamless functionality.
                                 </p>
@@ -855,6 +942,217 @@
                             <div class="timeline-dot"></div>
                             <div class="timeline-content">
                                 <h4 class="timeline-title">Web Development Projects</h4>
-                                <span class="timeline-period">2022 — Present</span>
+                                <span class="timeline-period">2022 â€” Present</span>
                                 <p class="timeline-description">
-                                    Developing modern web applications using HTML, CSS, and JavaScript. Creating responsive, user
+                                    Developing modern web applications using HTML, CSS, and JavaScript. Creating responsive, user-friendly interfaces with focus on clean code and professional design standards.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4 class="timeline-title">AI & Technology Exploration</h4>
+                                <span class="timeline-period">2023 â€” Present</span>
+                                <p class="timeline-description">
+                                    Exploring artificial intelligence technologies and their applications in web development, focusing on creating intelligent solutions for modern digital challenges.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4 class="timeline-title">Modeling & Photography</h4>
+                                <span class="timeline-period">2022 â€” Present</span>
+                                <p class="timeline-description">
+                                    Professional modeling work showcasing fashion, beauty, and elegance through creative photography and visual storytelling, developing skills in presentation and visual communication.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Download Resume Button -->
+                <div class="resume-download">
+                    <a href="https://files.catbox.moe/gt7t0x.jpg" download="Hrithik_Uday_Resume.jpg" class="download-btn">
+                        ðŸ“¥ Download Resume PDF
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div id="contact" class="content-section">
+            <div class="about-section fade-in">
+                <h2 class="section-title">Contact</h2>
+                <p class="about-text">Feel free to reach out to me for any inquiries or collaborations.</p>
+                
+                <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" onsubmit="handleFormSubmit(event)">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Full Name" required class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Email Address" required class="form-input">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="subject" placeholder="Subject" required class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Your Message" required class="form-textarea" rows="6"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <span class="btn-text">Send Message</span>
+                        <span class="btn-loading" style="display: none;">Sending...</span>
+                    </button>
+                </form>
+                
+                <div class="form-message" id="formMessage" style="display: none;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Full-Screen Resume View -->
+    <div id="resumeModal" class="modal" onclick="closeModal()">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <img src="https://files.catbox.moe/gt7t0x.jpg" alt="Hrithik Uday Resume" class="modal-image" />
+        </div>
+    </div>
+
+    <script>
+        // Contact form handling
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const form = event.target;
+            const submitBtn = form.querySelector('.submit-btn');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const btnLoading = submitBtn.querySelector('.btn-loading');
+            const messageDiv = document.getElementById('formMessage');
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'inline';
+            
+            // Get form data
+            const formData = new FormData(form);
+            
+            // Real form submission to Formspree or other service
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                // Reset button state
+                submitBtn.disabled = false;
+                btnText.style.display = 'inline';
+                btnLoading.style.display = 'none';
+                
+                if (response.ok) {
+                    // Show success message
+                    messageDiv.className = 'form-message success';
+                    messageDiv.innerHTML = 'âœ… Message sent successfully! I\'ll get back to you soon.';
+                    messageDiv.style.display = 'block';
+                    
+                    // Reset form
+                    form.reset();
+                } else {
+                    // Show error message
+                    messageDiv.className = 'form-message error';
+                    messageDiv.innerHTML = 'âŒ Oops! There was a problem sending your message. Please try again.';
+                    messageDiv.style.display = 'block';
+                }
+                
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    messageDiv.style.display = 'none';
+                }, 5000);
+                
+            }).catch(error => {
+                // Reset button state
+                submitBtn.disabled = false;
+                btnText.style.display = 'inline';
+                btnLoading.style.display = 'none';
+                
+                // Show error message
+                messageDiv.className = 'form-message error';
+                messageDiv.innerHTML = 'âŒ Network error. Please check your connection and try again.';
+                messageDiv.style.display = 'block';
+                
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    messageDiv.style.display = 'none';
+                }, 5000);
+            });
+        }
+
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.nav-tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
+
+        function openModal() {
+            document.getElementById('resumeModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('resumeModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Add smooth scroll behavior and entrance animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            });
+
+            const elements = document.querySelectorAll('.service-card, .about-section');
+            elements.forEach(el => observer.observe(el));
+        });
+
+        // Add hover effects to service cards
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html> 
